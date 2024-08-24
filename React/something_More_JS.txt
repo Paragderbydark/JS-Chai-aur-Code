@@ -1,0 +1,57 @@
+// why react
+
+React.js was created by Jordan Walke, a software engineer at
+Facebook, in 2010. Initially, it was an internal prototype called
+“FaxJS” built to solve a specific problem Facebook was facing:
+updating the News Feed in real-time without requiring a full page refresh.
+
+
+Efficient Rendering: React aimed to provide a more efficient way
+of rendering dynamic user interfaces, allowing for faster and smoother updates.
+
+Simplified View Logic: By unifying markup with view logic, React
+made it easier to extend and maintain views, reducing the risk of XSS vulnerabilities.
+
+JSX Syntax: React introduced JSX, an optional syntax extension,
+to provide a readable and HTML-like syntax for building UI components.
+
+React was designed for “innovators” rather than “early adopters,”
+recognizing that the initial audience might be skeptical. To address
+this, Facebook launched a “React tour” to convert skeptics into advocates
+
+
+//calling element from other element 
+const name = data.present?.name ;
+recommended safely calling 
+
+
+//const person1={
+    name:"alice",
+    age:30
+}
+const person2 = person1;
+person2.age= person1.age + 1;
+
+console.log(person1.age);
+console.log(person2.age);
+
+this will print 31 and 31
+
+becuz both variable refers to same obj so changing variable 2 will result change in variable 1 
+to avoid we use shallow copy 
+
+const person1 = {
+    name: "alice",
+    age: 30
+};
+const person2 = { ...person1 }; // Create a shallow copy of person1
+person2.age = person1.age + 1;
+
+console.log(person1.age); // Outputs: 30
+console.log(person2.age); // Outputs: 31
+
+ 
+
+
+
+

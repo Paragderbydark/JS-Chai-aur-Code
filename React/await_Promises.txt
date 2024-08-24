@@ -1,0 +1,61 @@
+// why we need 
+
+the main reason is it doesnt not block code thread from execution making it responsive 
+; deosnt determine the timming or nature of code , it only indicates execution of statement for that point of time 
+
+in java  we use thread.sleep() to block that the current thread , not making it responsive
+
+
+
+so Promise is an object that represents the eventual completions or failure of an asynchronous opereations and its resulting value 
+long running task should not block the main thread, allowing browser to be responsive 
+handled by callbacks promises or async/await
+
+in java , most operations are synchronous by default.means each styatement executes one after another , if operations takes time it 
+will block that executions of code  untill operations is complete 
+
+const event = new Promise((resolve,reject)=>{
+    var name = "love";
+    name="love"?resolve(name):reject("name was not love its "+name);
+});
+
+// handle resolve and reject functions 
+//try and catch and finally
+
+
+event 
+.then((name)=>{
+    console.log(name);
+})
+.catch((error)=>{
+    console.log(err);
+}).finally(()=>{
+    console.log("finally JOE");
+
+});
+
+
+//data fetch from api
+
+const axios = require("axios");
+const data = axios.get("api");
+
+data
+.then((res)=>{
+console.log(res.data);
+})
+.catch((err)=>{
+console.log(err);
+});
+
+// same thing but different await/async
+
+const fetchData = async () => { 
+try{
+const data =  await axios.get("api");
+console.log(data);}
+catch(err){
+console.log("error"+err);
+}
+};
+

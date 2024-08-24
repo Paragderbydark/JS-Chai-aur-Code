@@ -1,0 +1,332 @@
+
+js --2 version
+es5, es6
+
+
+
+var and let !! 
+es5
+var is functios scoped
+var adds itself to window object 
+alert()prompt()console()document()fetch()parent()etc..
+
+es6
+let is braces scoped 
+let doesnt adds itself to window object (features that browser have so that js can use it)
+
+var (es5) and let and const (es6)
+
+
+heap and stack 
+stack all primitive datatypes are stored
+heap all objects and references are stored 
+functions execution context : every time functions is called all local variable 
+is stored and pushed in stack ,after completions the execution context 
+is popped out from stack
+
+
+
+hoisting : variable and functions are hoisted which means their 
+decleration is moved on the top of code 
+::decleration moves to top! making use of variable befor declerations 
+for example 
+console.log(a);
+var a = 12;
+// valid 
+// default value = undefined //not error
+
+Types :  primitive number ,string, null, undefined ,boolean   and reference () {} []
+// aisi koi bhi value jismeh copy kerne se real copy nahi hota balki reference pass 
+   hojaata he usse hum reference value khteh he
+// jiisse copy krne se real copy ho jatah he use primitive khteh he 
+
+executions context : (imaginary daaba) = (variables, functions, lexical environmnet )
+lex = says which can be accessed and which cant be 
+- is container where the functions code is executed and it is created whenever a function is called 
+  it contains 3 things , variable , functions and lexical environmnet
+
+falsy: 0 false, undefined, null, NaN, document.all; else every one is true
+
+for loop whithout using array 
+let person = {
+  name: "John",
+  age: 30,
+  occupation: "Developer"
+};
+
+for (let property in person) { // for(in) is used in obj;
+  console.log(`${property}: ${person[property]}`); // printing for particular element 
+  // person[property];
+}
+
+let a = [ 1,2,3,4,5,6,7,8,9,0];
+a.forEach(function(val){
+    console.log(val+2);
+})
+
+** forEach doesnt change array by default , it does change in its own copy so array 
+   remains same , same as java 
+
+The forEach method allows you to modify 
+the original array directly within the callback function.
+
+
+public class Person {
+    private String name;
+    private int age;
+    private String address;
+
+    // Constructor
+    public Person(String name, int age, String address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+    public static void main(String[] args) {
+        Person person = new Person("John Doe", 30, "123 Main St");
+        System.out.println(person.name);
+        
+    }
+}
+
+but in js 
+ let person = {
+    const name = Joe;
+    const age = 31;
+    const address = "NA";
+ }
+
+for(let key in person){
+console.log(person[key]);}
+
+we cant use for loop to iterate in obj like in js we can use feild , reflections property to itterate 
+import java.lang.reflect.Field;
+
+class Person {
+    public String name;
+    public int age;
+    public String city;
+
+    Person(String name, int age, String city) {
+        this.name = name;
+        this.age = age;
+        this.city = city;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("Alice", 30, "Wonderland");
+
+        // Using reflection to iterate over the fields
+        Field[] fields = person.getClass().getFields();
+        for (Field field : fields) {
+            try {
+                // Getting field name and value
+                String name = field.getName();
+                Object value = field.get(person);
+                System.out.println(name + ": " + value);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+callback func means after given time it directs js to run given perticular functions 
+after that completions .
+
+setTimeout(()=>{
+  console.log("2 sec bad");
+},2000);
+
+first clas functions 
+
+function abcd(a){
+  a();
+}
+
+abcd(function(){console.log("hello);})
+
+let age = {
+name:"harsh",
+age:24
+}
+delete a.age
+
+
+**higher order functions 
+accepts a functions as parameters or return function or both
+
+functions abcd(function a()){
+    return function b();
+}
+ 
+** constructor function 
+functions that uses .this keyword for making any instance of an objects // same
+as in java
+
+function abcd(){
+    this.width  = width;
+    this.height = height;
+}
+let obj1 = new abcd(); //note in java we have to mentions class
+
+**first class func means treating func as variables
+
+(function() {
+    console.log("IIFE runs immediately");
+})(); // Output: "IIFE runs immediately"
+
+
+{
+    console.log("Block runs immediately");
+} // Output: "Block runs immediately"
+
+advantages ::
+
+const counterModule = (function() {
+    let count = 0;
+
+    return {
+        increment: function() {
+            count++;
+            return count;
+        },
+        decrement: function() {
+            count--;
+            return count;
+        },
+        getCount: function() {
+            return count;
+        }
+    };
+})();
+
+console.log(counterModule.increment()); // Output: 1
+console.log(counterModule.getCount());  // Output: 1
+console.log(counterModule.decrement()); // Output: 0
+console.log(counterModule.getCount());  // Output: 0
+
+
+
+{
+    let count = 0;
+
+    const counter = {
+        increment: function() {
+            count++;
+            return count;
+        },
+        decrement: function() {
+            count--;
+            return count;
+        },
+        getCount: function() {
+            return count;
+        }
+    };
+
+    console.log(counter.increment()); // Output: 1
+    console.log(counter.getCount());  // Output: 1
+    console.log(counter.decrement()); // Output: 0
+    console.log(counter.getCount());  // Output: 0
+}
+
+// Attempting to access `counter` outside the block will result in an error
+// console.log(counter.increment()); // Uncaught ReferenceError: counter is not defined
+
+
+let person = {
+    hasfourleg:true
+ }
+
+ let human ={
+    cantalk :true,
+    canfly:false
+ }
+
+ human.__proto__ = person;
+ console.log(human.hasfourleg);
+
+
+ child.__proto__ = parent ;
+
+ //performance issues 
+
+.....................................
+ let parent = {
+    hasFourLegs: true
+};
+
+let child = {
+    canTalk: true,
+    canFly: false
+};
+
+Object.setPrototypeOf(child, parent);
+
+console.log(child.hasFourLegs); // Output: true
+console.log(child.canTalk);     // Output: true
+console.log(child.canFly);      // Output: false
+console.log(parent.canFly);     // Output: undefined
+
+or..........................................................
+
+let parent = {
+    hasFourLegs: true
+};
+
+let child = Object.create(parent, {
+    canTalk: { value: true },
+    canFly: { value: false }
+});
+
+console.log(child.hasFourLegs); // Output: true
+console.log(child.canTalk);     // Output: true
+console.log(child.canFly);      // Output: false
+console.log(parent.canFly);     // Output: undefined
+
+
+function abcd(){
+    console.log(this);
+};
+let obj = {age:24};
+abcd.call(obj);
+
+
+function abcd(arg) {
+    //console.log(this); // this refers to the global object (window in browsers)
+    console.log(arg);  // arg refers to the argument passed (obj)
+}
+
+let obj = { age: 24 };
+
+abcd(obj); // Regular function call, this is global object, arg is obj
+
+If you want to set this to obj, you need to use call, apply, or bind. 
+Simply passing obj as an argument to the function doesn't set this to obj; 
+it just passes obj as an argument.
+
+function abcd(val1,val2,val3){
+    console.log(this,val1,val2,val3);
+};
+let obj = {age:24};
+abcd.call(obj,1,2,3);
+abcd.apply(obj,[1,2,3]);
+
+
+use case : 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+1st step : 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+
+}
+
+selector{
+    #id,tag,.class
+}
+
+pix : small values 
+percentage : when u dont know the actual size according to window
+
+margin : space between two elements 
+padding : space within element, element ke andar
+
+
+background-image: url(enter url);
+background-size: cover // means image will be covered according to windows size
+background-positions: center,top, bottom, etc 
+
+
+//absolute 
+means it comes up and all element may cover that specif space acoording top element number 
+example car 
+
+//who will be highest level will determine which one should cover 
+
+
+//relative 
+making elements's space relative means it is fixed even if it is absolute can move accoding to the 
+give space but not outside the space 
+// again absolute means it will pop up and display
+it may cover others element 
+or may shifts others elements 
+
+//flexbox
+
+lets say 3 elements are placed on box 
+default placement should be top bottom 
+but u want to display horizontally
+
+so make that parent or reference as flex 
+for width changes use justify contents 
+for height chnages use align items 
+
+
+
+
+

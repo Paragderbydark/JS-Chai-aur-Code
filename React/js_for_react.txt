@@ -1,0 +1,87 @@
+this in java 
+// 
+const person = {
+    name = "",
+    age = 19,
+    isMarried = false
+};
+const {name,age,isMarried} = person /// const name = person.name;
+
+//arrow functions 
+
+const functionNum (){
+    do something
+
+};
+
+const functionNum = () => {
+    do something
+};
+
+//export 
+
+export default const functionNum (){
+    do something
+
+};
+
+export const functionNum = () => {
+    do something
+};
+
+// ternary operations 
+
+const age = 20;
+name =  "love";
+let decision = age>20 ? name = "joe" : name = "beck";
+
+const MyComponenent = ()=>{
+    return age>20?<div>Pedro</div>:<div>Joe</div>;
+}
+
+let name = age>20 && "pedro" ; //if age >20 then name = pedro
+
+assinging same variable in object creations 
+
+//
+let name = "Joe";
+
+const person = {
+    name = name, // name,
+    age = 19,
+    isMarried = false
+};
+
+passing same object in object creations 
+
+const person2 = {
+    ...person,name = "Love"
+}
+
+in array
+
+const arr = [1,2,3,4];
+const arr2 = [...arr,5];
+
+// map and filter 
+
+let arr = [1,2,3,4];
+arr.map((i)=>{
+
+console.log(i);
+//console.log(i+1);
+//return i+"1";
+
+});
+
+//generate header for each perticular character in a list 
+let names = ["love","beck","candace"];
+names.map((name)=>{
+    return <h1> {name} </h1>
+})
+
+//filter 
+let names = ["love","beck","candace","beck"];
+names.filter((name)=>{
+    return name !=="beck";
+});

@@ -1,0 +1,23 @@
+document object model
+
+//4 pillar of document 
+selection
+changing html
+changing css
+EV 
+
+
+
+document.querySelector("h1") //slect htlm element
+
+var a = document.querySelector("h1"); 
+a.innerHTML = "changed";
+
+//document.querySelectorAll("h1"); returns as arrya
+document.getElementsById()
+document.getElemnetsByClassName()
+
+a.style.color ="red"
+a.addEventListener("click",()=>{
+    console.log("hey");
+}) 
