@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project_14/4/2024</title>
+   
+    <!-- Css page-->
+
+    <link rel="stylesheet" href="style.css"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- BOxicons link-->
+</head>
+<body>
+    <div class="container">
+     <div class="form-box">
+        <form action="#" class="LoginForm">
+            <h2>Login</h2> 
+            <!--  The action attribute specifies the URL where the form data will be sent when the form is submitted. In this case, the # symbol in the action attribute means that the form data will be submitted to the current page itself.-->
+            <div class="input-box">
+                <input type="text" required>
+                <label>Username</label>
+                <i class='bx bx-user'></i>
+
+            </div>
+            <div class="input-box">
+                <input type="password" required>
+                <label>Password</label>
+                <i class='bx bx-lock-open-alt' ></i>
+            </div>
+            <div class="forget-section">
+                <p>
+                    <input type="checkbox" name="" id="">
+                    Remembar me 
+                </p>
+                <a href="#">Forget Password</a>
+            </div>
+            <button class="btn">Sign in</button>
+            <div class="account-creation">
+                <span>Don't have account ?  <a href="#" class="registerlink">Register</a></span>
+            </div>
+        </form>
+
+        <form action="#" class="RegisterForm">
+            <h2>Register</h2> 
+            <!--  The action attribute specifies the URL where the form data will be sent when the form is submitted. In this case, the # symbol in the action attribute means that the form data will be submitted to the current page itself.-->
+            <div class="input-box">
+                <input type="text" required>
+                <label>Username</label>
+                <i class='bx bx-user'></i>
+
+            </div>
+            <div class="input-box">
+                <input type="password" required>
+                <label>Password</label>
+                <i class='bx bx-lock-open-alt' ></i>
+            </div>
+            <div class="input-box">
+                <input type="password" required>
+                <label>Confirm Password</label>
+                <i class='bx bx-lock-open-alt' ></i>
+            </div>
+            
+            <button class="btn">Sign up</button>
+            <div class="account-creation">
+                <span>  Already have an account ?  <a href="#" class="loginlink">Log in</a></span>
+            </div>
+            
+        </form>
+     </div>
+    </div>
+    <script>
+        const LoginForm=document.querySelector('.LoginForm');
+        const RegisterForm=document.querySelector('.RegisterForm');
+        const registerlink=document.querySelector('.registerlink');
+        const loginlink=document.querySelector('.loginlink');
+        registerlink.onclick=()=>{
+            RegisterForm.classList.add('active');
+            LoginForm.classList.add('active');
+        }
+        loginlink.onclick=()=>{
+            RegisterForm.classList.remove('active');
+            LoginForm.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
