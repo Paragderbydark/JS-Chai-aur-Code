@@ -1,0 +1,4 @@
+JSON formart to sort and classify the view of LongAPI
+
+XMLHTTP req --ajax programming 
+
