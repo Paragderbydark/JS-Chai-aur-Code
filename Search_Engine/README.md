@@ -3,7 +3,7 @@
 #### Get all items
 
 ```http
-  GET https://quiet-tartufo-d4bc5c.netlify.app
+  Site: https://quiet-tartufo-d4bc5c.netlify.app
 ```
 
 | Parameter | Type     | Description                       |
